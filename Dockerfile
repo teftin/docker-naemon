@@ -15,5 +15,7 @@ ADD thruk_local.conf /etc/thruk/
 
 ADD sv /opt/sv
 
+VOLUME /naemon
+
 EXPOSE 80
 CMD exec runsvdir /opt/sv
