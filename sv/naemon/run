@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#sed -e '/broker_module=.*\/livestatus.so/s/^#//' \
+#    -i.bak /etc/naemon/naemon.cfg
+
+exec chpst -u naemon /usr/bin/naemon /etc/naemon/naemon.cfg

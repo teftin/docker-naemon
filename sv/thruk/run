@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sed -e '/^default_user_name=/c\default_user_name=thrukadmin' \
+    -i.bak /etc/thruk/cgi.cfg
+
+exec chpst -u www-data:naemon -e env /usr/share/thruk/script/thruk_fastcgi.pl -l /tmp/thruk.fcgi -e -n 4
